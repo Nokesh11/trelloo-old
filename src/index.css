@@ -1,0 +1,187 @@
+:root {
+  /* Trello Brand Colors */
+  --trello-blue: #0c66e4;
+  --trello-blue-hover: #0055cc;
+  
+  /* Board Background Gradient - Trello Style */
+  --bg-gradient: linear-gradient(79.47deg, #964ac0 25.62%, #1868db 99.57%);
+  
+  /* List Background Colors - Trello Dynamic */
+  --list-yellow: #f5e989;
+  --list-green: #baf3db;
+  --list-grey: #f1f2f4;
+  --list-blue: #cce0ff;
+  --list-purple: #dfd8fd;
+  --list-pink: #fdd0ec;
+  --list-orange: #fedec8;
+  
+  /* Card Colors */
+  --bg-card: #ffffff;
+  --bg-card-hover: #f7f8f9;
+  
+  /* Text Colors */
+  --text-primary: #1d2125;
+  --text-secondary: #44546f;
+  --text-muted: #626f86;
+  --text-bright: #ffffff;
+  --text-link: #0c66e4;
+  
+  /* Border Colors */
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-focus: #388bff;
+  
+  /* Label Colors - Trello Palette */
+  --label-green: #4bce97;
+  --label-green-subtle: #baf3db;
+  --label-yellow: #f5cd47;
+  --label-yellow-subtle: #f8e6a0;
+  --label-orange: #fea362;
+  --label-orange-subtle: #fedec8;
+  --label-red: #f87168;
+  --label-red-subtle: #ffd5d2;
+  --label-purple: #9f8fef;
+  --label-purple-subtle: #dfd8fd;
+  --label-blue: #579dff;
+  --label-blue-subtle: #cce0ff;
+  --label-sky: #6cc3e0;
+  --label-lime: #94c748;
+  --label-pink: #e774bb;
+  --label-black: #8590a2;
+  
+  /* Shadows - Trello Style */
+  --shadow-card: rgba(30, 31, 33, 0.25) 0px 1px 1px 0px, rgba(30, 31, 33, 0.31) 0px 0px 1px 0px;
+  --shadow-card-hover: 0px 8px 12px rgba(9, 30, 66, 0.15), 0px 0px 1px rgba(9, 30, 66, 0.31);
+  --shadow-dropdown: 0px 8px 12px rgba(9, 30, 66, 0.15), 0px 0px 1px rgba(9, 30, 66, 0.31);
+  --shadow-modal: 0 0 0 1px rgba(9, 30, 66, 0.08), 0px 8px 16px rgba(9, 30, 66, 0.25);
+  --shadow-bottom-nav: 0px 8px 12px rgba(9, 30, 66, 0.15), 0px 0px 1px rgba(9, 30, 66, 0.31);
+  
+  /* Sizes */
+  --header-height: 48px;
+  --board-header-height: 56px;
+  --list-width: 272px;
+  --card-radius: 8px;
+  --list-radius: 12px;
+  --btn-radius: 3px;
+  --bottom-nav-radius: 20px;
+  
+  /* Transitions */
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.2s ease;
+  
+  /* Fonts - Trello uses system fonts */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar Styles - Trello Style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Base Styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Input Base Styles */
+input, textarea {
+  font-family: inherit;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: var(--btn-radius);
+  padding: 8px 12px;
+  box-shadow: inset 0 0 0 2px var(--border-color);
+  transition: box-shadow var(--transition-fast);
+}
+
+input:focus, textarea:focus {
+  box-shadow: inset 0 0 0 2px var(--border-focus);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Link Styles */
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

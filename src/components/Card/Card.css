@@ -1,0 +1,255 @@
+.card {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card.dragging {
+  box-shadow: var(--shadow-card-hover);
+  transform: rotate(4deg);
+  background: var(--bg-card);
+}
+
+.card-content {
+  padding: 8px 12px 4px 12px;
+}
+
+.card-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.card-label {
+  height: 8px;
+  min-width: 40px;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.card-label.expanded {
+  height: 16px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 14px;
+  color: var(--text-primary);
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+}
+
+.card-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.card-badge svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.card-badge.due-date {
+  background: var(--list-grey);
+}
+
+.card-badge.due-date.overdue {
+  background: #ffd5d2;
+  color: #ae2e24;
+}
+
+.card-badge.due-date.due-soon {
+  background: #f8e6a0;
+  color: #7f5f01;
+}
+
+.card-badge.due-date.complete {
+  background: #baf3db;
+  color: #216e4e;
+}
+
+.card-badge.checklist {
+  background: transparent;
+}
+
+.card-badge.checklist.complete {
+  background: #baf3db;
+  color: #216e4e;
+}
+
+/* Card Icons Row */
+.card-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.card-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card-members {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  margin-left: auto;
+}
+
+.card-member {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-bright);
+  margin-left: -4px;
+  border: 2px solid var(--bg-card);
+}
+
+.card-member:first-child {
+  margin-left: 0;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-bottom: 4px;
+}
+
+/* Add Card Styles */
+.add-card-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--card-radius);
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.add-card-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+}
+
+.add-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-card-textarea {
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  resize: none;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.add-card-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.add-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-card-submit {
+  padding: 6px 12px;
+  background: var(--trello-blue);
+  color: var(--text-bright);
+  border-radius: var(--btn-radius);
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.add-card-submit:hover {
+  background: var(--trello-blue-hover);
+}
+
+.add-card-cancel {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--btn-radius);
+  color: var(--text-muted);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.add-card-cancel:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Completed Task Indicator */
+.card-complete-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #4bce97;
+  border-radius: 50%;
+  color: white;
+  margin-right: 8px;
+}
+
+.card-complete-indicator svg {
+  width: 12px;
+  height: 12px;
+}

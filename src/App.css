@@ -1,0 +1,97 @@
+.app {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Content wrapper for Board */
+.app-content-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 14px;
+  padding: 17px;
+  background: #f0f1f2;
+  overflow: hidden;
+}
+
+/* Board container with rounded corners */
+.board-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #8f63c5 0%, #a66ccf 40%, #c777d6 70%, #e07ac8 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.app-loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #1d2125;
+  color: #b6c2cf;
+}
+
+.app-loading .loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #579dff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: white;
+}
+
+.app-empty h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.app-empty p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.create-first-board-btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.create-first-board-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
