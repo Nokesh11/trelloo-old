@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://frontend-trello-2-0.vercel.app/$1",
+      "permanent": true
+    }
+  ]
+}
